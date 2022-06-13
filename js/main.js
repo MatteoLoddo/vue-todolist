@@ -1,7 +1,7 @@
 const toDo = [
     {
         text:'Fare la spesa',
-        done: true
+        done: false
     },
     {
         text:'Fare Benzina',
@@ -34,6 +34,11 @@ const appVue = new Vue({
             }else if (this.listToDo[indice].done == false){
                 this.listToDo[indice].done = true
             }
+        },
+
+        taskDelete(indice){
+            this.listToDo.splice(indice, 1)
+            console.log(indice);
         }
     }
 })
